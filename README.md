@@ -14,7 +14,7 @@ Since these steps were parsed from a few different sources, I thought it would b
 
 ### More on the welcome component generation
 
-Minor, but frustrating. You might think your ts setup is wrong when you see js files being generated. It's not. To further the confusion, there are tutorials that show ts files being generated with this command (without the -ts flag). I believe if you update your `.ember-cli` file to include ` "isTypeScriptProject": true` it should include `-ts` flag by default, but it appears squash the help warning that the flag gives you. Until I learn more about ember, I plan to use the `-ts` flag version for better insight. That version looks like this: `ember g component -ts -gc welcome`
+Minor, but frustrating. You might think your ts setup is wrong when you see js files being generated. It's not. To further the confusion, there are tutorials that show ts files being generated with this command (without the `-ts` flag). I believe if you update your `.ember-cli` file to include ` "isTypeScriptProject": true` it should include `-ts` flag by default, but it appears squash the help warning that the flag gives you. Until I learn more about ember, I plan to use the `-ts` flag version for better insight. That version looks like this: `ember g component -ts -gc welcome`
 
 Example output with ts flag:
 
