@@ -19,7 +19,9 @@ module.exports = {
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'prettier/prettier': 2, // this line NEEDS to be enabled or code will not auto format on save
+  },
   overrides: [
     // node files
     {
