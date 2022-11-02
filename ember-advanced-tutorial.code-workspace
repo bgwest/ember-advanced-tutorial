@@ -1,0 +1,41 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "[jsonc]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[handlebars]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascript]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[javascriptreact]": {
+      "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "editor.formatOnSave": true, // Default (format when you save)
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+    "files.autoSave": "onFocusChange",
+    "eslint.format.enable": true,
+    "eslint.alwaysShowStatus": true,
+    "eslint.useESLintClass": true,
+    "eslint.codeActionsOnSave.mode": "problems",
+    "eslint.run": "onSave",
+    "explorer.compactFolders": false,
+    "editor.suggest.showFolders": true,
+    "javascript.preferences.importModuleSpecifier": "shortest",
+    "typescript.preferences.importModuleSpecifier": "non-relative",
+    "typescript.preferences.importModuleSpecifierEnding": "minimal",
+    "typescript.preferences.includePackageJsonAutoImports": "on",
+    "workbench.colorTheme": "Community Material Theme High Contrast"
+  }
+}
