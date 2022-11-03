@@ -2,7 +2,12 @@
 
 ## How I generated this repo boilerplate
 
-Since these steps were parsed from a few different sources, I thought it would be nice to have them in once place incase I need to do this again. I like that the `init` command lets you do your own git repo/process. Almost all the docs recommend `ember new`, which adds a `.git` setup for you.
+Since my process for creating an base level ember app is being parsed from a few different sources, I thought it would be nice to have them in one place incase I need to do this again.
+
+I liked that the `init` command let you do your own git repo/process. Almost all the docs recommend `ember new`, which adds a `.git` setup for you.
+
+**Update/Amendment**:  
+It looks like you can also run `ember new` with `--skip-git ` or `-sg` for short. Please note, my README here (at this time) is solely for helping me remember things. What I understand and assert is subject to change as I learn more.
 
 1. In GitHub, created a new empty repo called "ember-advanced-tutorial" .
 2. Locally, when in dir of choice, ran my global ember command: `ember init`
@@ -11,6 +16,7 @@ Since these steps were parsed from a few different sources, I thought it would b
 5. ran ` ember install ember-cli-typescript@latest`
 6. ran `ember g component -gc welcome` (**note:** _see below if your confused by the output_)
 7. Add eslint/prettier or any further tsconfig if needed
+8. For better accessibility, add your preferred lang via the lang attribute in the html tag inside `app/index.html` (e.g. `<html lang="en">`) (_**note:** happens automatically when using `ember new` (referenced here:_ <a href="https://guides.emberjs.com/release/tutorial/part-1/orientation/#toc_creating-a-new-ember-app-with-ember-cli" target="_blank" rel="noopener noreferrer">#toc_creating-a-new-ember-app-with-ember-cli</a>))
 
 ### More on the welcome component generation
 
