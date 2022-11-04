@@ -11,6 +11,18 @@ module('Acceptance | ember advanced tutorial', function (hooks) {
   const root = '/';
   const about = '/about';
   const contact = '/getting-in-touch';
+  const appPaths = [root, about, contact];
+
+  test.each(
+    'verify each route has the top nav',
+    appPaths,
+    async (assert, path) => {
+      await visit(path);
+      assert.strictEqual(currentURL(), path);
+      assert.dom('nav').exists();
+      assert.dom('h1').hasText('SuperRentals');
+    }
+  );
 
   test(`visiting ${root}`, async function (assert) {
     await visit(root);
