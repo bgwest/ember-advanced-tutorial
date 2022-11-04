@@ -22,6 +22,7 @@ module('Acceptance | ember advanced tutorial', function (hooks) {
     assert.strictEqual(currentURL(), '/about');
 
     assert.dom('.jumbo a.button.home').hasText('Home');
-    await click('.jumbo a.button');
+    await click('.jumbo a.button.home');
+    assert.strictEqual(currentURL(), root);
   });
 });
