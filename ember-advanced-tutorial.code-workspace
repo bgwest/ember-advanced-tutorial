@@ -36,6 +36,11 @@
     "typescript.preferences.importModuleSpecifier": "non-relative",
     "typescript.preferences.importModuleSpecifierEnding": "minimal",
     "typescript.preferences.includePackageJsonAutoImports": "on",
-    "workbench.colorTheme": "Community Material Theme High Contrast"
+    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorCustomizations": {
+      "[*]": {
+        "contrastActiveBorder": "#d7d2d22e"
+      }
+    }
   }
 }
