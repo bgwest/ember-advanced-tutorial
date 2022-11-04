@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { visit, currentURL } from '@ember/test-helpers';
+import { visit, currentURL, click } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-advanced-tutorial/tests/helpers';
 
 // Acceptance tests are also known as "application tests" and are one of the few types of
@@ -8,10 +8,20 @@ import { setupApplicationTest } from 'ember-advanced-tutorial/tests/helpers';
 // They're an automated version of the "click around and see if it works" manual approach
 module('Acceptance | ember advanced tutorial', function (hooks) {
   setupApplicationTest(hooks);
+  const root = '/';
 
-  test('visiting /ember-advanced-tutorial', async function (assert) {
-    await visit('/ember-advanced-tutorial');
+  test(`visiting ${root}`, async function (assert) {
+    await visit(root);
 
-    assert.strictEqual(currentURL(), '/ember-advanced-tutorial');
+    assert.strictEqual(currentURL(), root);
+    assert.dom('h2').hasText('Welcome to Super Rentals!');
+
+    assert.dom('.jumbo a.button').hasText('About Us');
+    await click('.jumbo a.button');
+
+    assert.strictEqual(currentURL(), '/about');
+
+    assert.dom('.jumbo a.button.home').hasText('Home');
+    await click('.jumbo a.button');
   });
 });
