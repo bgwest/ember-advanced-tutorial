@@ -9,6 +9,8 @@ import { setupApplicationTest } from 'ember-advanced-tutorial/tests/helpers';
 module('Acceptance | ember advanced tutorial', function (hooks) {
   setupApplicationTest(hooks);
   const root = '/';
+  const about = '/about';
+  const contact = '/getting-in-touch';
 
   test(`visiting ${root}`, async function (assert) {
     await visit(root);
@@ -24,5 +26,29 @@ module('Acceptance | ember advanced tutorial', function (hooks) {
     assert.dom('.jumbo a.button.home').hasText('Home');
     await click('.jumbo a.button.home');
     assert.strictEqual(currentURL(), root);
+  });
+
+  test(`visiting ${about}`, async function (assert) {
+    await visit(about);
+
+    assert.strictEqual(currentURL(), about);
+    assert.dom('h2').hasText('About Super Rentals');
+
+    assert.dom('.jumbo a.button').hasText('Contact Us');
+    await click('.jumbo a.button');
+
+    assert.strictEqual(currentURL(), contact);
+  });
+
+  test(`visiting ${contact}`, async function (assert) {
+    await visit(contact);
+
+    assert.strictEqual(currentURL(), contact);
+    assert.dom('h2').hasText('Contact Us');
+
+    assert.dom('.jumbo a.button').hasText('About');
+    await click('.jumbo a.button');
+
+    assert.strictEqual(currentURL(), about);
   });
 });
