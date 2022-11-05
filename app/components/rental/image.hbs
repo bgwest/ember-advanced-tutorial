@@ -1,3 +1,18 @@
-<div class='image'>
+<button
+  type='button'
+  class='image {{if this.isLarge "large"}}'
+  {{on 'click' this.toggleSize}}
+>
   <img ...attributes />
-</div>
+  {{!-- first way to write this
+  :start
+    {{#if this.isLarge}}
+      <small>View Smaller</small>
+    {{else}}
+      <small>View Larger</small>
+    {{/if}}  
+  :end
+  --}}
+  {{! second way to write this, basically a ternary  }}
+  <small>View {{if this.isLarge 'Smaller' 'Larger'}}</small>
+</button>

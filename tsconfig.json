@@ -5,6 +5,7 @@
     // layout, which is not resolvable with the Node resolution algorithm, to
     // work with TypeScript.
     "baseUrl": ".",
+    "experimentalDecorators": true,
     "paths": {
       "ember-advanced-tutorial/tests/*": ["tests/*"],
       "ember-advanced-tutorial/*": ["app/*"],
@@ -20,7 +21,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true
+    "noPropertyAccessFromIndexSignature": true,
+    "inlineSourceMap": true,
+    "inlineSources": true
   },
   "include": ["app/**/*", "tests/**/*", "types/**/*"]
 }
