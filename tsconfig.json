@@ -20,7 +20,9 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
-    "noPropertyAccessFromIndexSignature": true
+    "noPropertyAccessFromIndexSignature": true,
+    "inlineSourceMap": true,
+    "inlineSources": true
   },
   "include": ["app/**/*", "tests/**/*", "types/**/*"]
 }
