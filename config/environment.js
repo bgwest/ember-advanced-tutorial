@@ -43,5 +43,11 @@ module.exports = function (environment) {
     // here you can enable a production-specific feature
   }
 
+  // helpful tip:
+  // the term running ember server, vscode, and ember server itself
+  // must be restarted after ensuring your env export is available
+  // or it will be undefined
+  ENV.MAPBOX_ACCESS_TOKEN = process.env.MAPBOX_ACCESS_TOKEN;
+
   return ENV;
 };
