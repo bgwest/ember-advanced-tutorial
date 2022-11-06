@@ -96,15 +96,15 @@ module('Integration | Component | map', function (hooks) {
       .dom('.map img')
       .hasAttribute('width', '150') // default width
       .hasAttribute('height', '150') // default height
-      .hasAttribute('alt', 'Map image at coordinates 37.7749,-122.4194');
+      .hasAttribute('alt', 'Map image at coordinates 37.7749,-122.4194'); // default alt (set in template, not Class JS)
 
     let { src } = find('.map img');
     assert.ok(
-      src.includes('-122.4194,37.7749,8.79'),
+      src.includes('-122.4194,37.7749,8.79'), // default coordinates
       "the src should include the Class's default lng,lat,zoom parameter"
     );
     assert.ok(
-      src.includes('150x150@2x'),
+      src.includes('150x150@2x'), // default height/width again, but now just inside src
       "the src should include the Class's default width,height and @2x parameter"
     );
   });
