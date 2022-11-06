@@ -1,0 +1,13 @@
+<div class='map'>
+  <img
+    alt='Map image at coordinates {{if @lat @lat this.lat}},{{if
+      @lng
+      @lng
+      this.lng
+    }}'
+    width={{if @width @width this.width}}
+    height={{if @height @height this.height}}
+    ...attributes
+    src={{this.src}}
+  />
+</div>
