@@ -76,6 +76,16 @@ module('Integration | Component | map', function (hooks) {
 
     assert
       .dom('.map img')
+      /* 
+        very nice doc for qunit dom -- contains hasAttribute and many others in here:
+        https://github.com/mainmatter/qunit-dom/blob/master/API.md                     
+       */
+      /* 
+        Note that the hasAttribute test helper from qunit-dom supports using regular expressions 
+        We used this feature to confirm that the src attribute starts with https://api.mapbox.com/, 
+        as opposed to requiring it to be an exact match against a string. This allows us to be reasonably 
+        confident that the code is working correctly, without being overly-detailed in our tests.
+      */
       .hasAttribute('src', /^https:\/\/api\.mapbox\.com\//)
       .hasAttribute('width', '150')
       .hasAttribute('height', '120');
