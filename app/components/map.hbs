@@ -1,13 +1,13 @@
 <div class='map'>
   <img
-    alt='Map image at coordinates {{@lat}},{{@lng}}'
+    alt='Map image at coordinates {{if @lat @lat this.lat}},{{if
+      @lng
+      @lng
+      this.lng
+    }}'
+    width={{if @width @width this.width}}
+    height={{if @height @height this.height}}
     ...attributes
-    src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/{{@lng}},{{@lat}},{{if
-      @zoom
-      @zoom
-      8.79
-    }}/{{@width}}x{{@height}}@2x?access_token={{this.token}}'
-    width={{@width}}
-    height={{@height}}
+    src={{this.src}}
   />
 </div>

@@ -70,8 +70,6 @@ module('Integration | Component | map', function (hooks) {
         @width="150"
         @height="120"
         src="/assets/images/teaching-tomster.png"
-        width="200"
-        height="300"
       />`);
 
     assert
@@ -89,5 +87,25 @@ module('Integration | Component | map', function (hooks) {
       .hasAttribute('src', /^https:\/\/api\.mapbox\.com\//)
       .hasAttribute('width', '150')
       .hasAttribute('height', '120');
+  });
+
+  test('the default values work in JS Class when no decorators are passed', async function (assert) {
+    await render(hbs`<Map />`); // Note how no decorators are being passed
+
+    assert
+      .dom('.map img')
+      .hasAttribute('width', '150') // default width
+      .hasAttribute('height', '150') // default height
+      .hasAttribute('alt', 'Map image at coordinates 37.7749,-122.4194');
+
+    let { src } = find('.map img');
+    assert.ok(
+      src.includes('-122.4194,37.7749,8.79'),
+      "the src should include the Class's default lng,lat,zoom parameter"
+    );
+    assert.ok(
+      src.includes('150x150@2x'),
+      "the src should include the Class's default width,height and @2x parameter"
+    );
   });
 });
