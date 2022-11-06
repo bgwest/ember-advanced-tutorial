@@ -34,13 +34,6 @@ export default class MapComponent extends Component {
       zoom: zoomArg,
     } = this.args;
 
-    console.log({
-      widthArg,
-      width: this.width,
-      heightArg,
-      height: this.height,
-    });
-
     const coordinates = `${lngArg ?? this.lng},${latArg ?? this.lat},${
       zoomArg ?? this.zoom
     }`;
