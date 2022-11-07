@@ -12,4 +12,7 @@ Router.map(function () {
   //            path declaration isn't needed
   this.route('about');
   this.route('contact', { path: '/getting-in-touch' });
+  // :rental_id is a "dynamic segment" (what I currently know as a "route param" in react-router...)
+  // https://guides.emberjs.com/release/routing/defining-your-routes/#toc_dynamic-segments
+  this.route('rental', { path: '/rentals/:rental_id' });
 });
