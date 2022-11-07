@@ -16,13 +16,13 @@ It looks like you can also run `ember new` with `--skip-git ` or `-sg` for short
 3. Added all generated files to GitHub and pushed it up
 4. created a new branch for typescript/vscode configs
 5. ran ` ember install ember-cli-typescript@latest`
-6. ran `ember g component -gc welcome` (**note:** _see below if your confused by the output_)
+6. ran `ember g component -gc welcome` (**note:** _I could not get this to command to generate any ts files..._)
 7. Add eslint/prettier or any further tsconfig if needed
 8. For better accessibility, add your preferred lang via the lang attribute in the html tag inside `app/index.html` (e.g. `<html lang="en">`) (_**note:** happens automatically when using `ember new` (referenced here:_ <a href="https://guides.emberjs.com/release/tutorial/part-1/orientation/#toc_creating-a-new-ember-app-with-ember-cli" target="_blank" rel="noopener noreferrer">#toc_creating-a-new-ember-app-with-ember-cli</a>))
 
 ### More on the welcome component generation
 
-Minor, but frustrating. You might think your ts setup is wrong when you see js files being generated. It's not. To further the confusion, there are tutorials that show ts files being generated with this command (without the `-ts` flag). I believe if you update your `.ember-cli` file to include ` "isTypeScriptProject": true` it should include `-ts` flag by default, but it appears squash the help warning that the flag gives you. Until I learn more about ember, I plan to use the `-ts` flag version for better insight. That version looks like this: `ember g component -ts -gc welcome`
+I plan to use the `-ts` flag version of `ember generate component` for better better insight (`ember g component -ts -gc welcome`). It tells you whether or not templates are available for what you are trying to create. As of end of part 1 of the super rental tutorial, I have not had 1 set of the cli commands generate a typescript file. My current guess is either I've set something up incorrectly or what is acturally generated in typescript with `ember generate component` limited. I'm not entirely sure at this time.
 
 Example output with ts flag:
 
