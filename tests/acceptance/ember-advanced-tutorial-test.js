@@ -40,6 +40,25 @@ module('Acceptance | ember advanced tutorial', function (hooks) {
     assert.strictEqual(currentURL(), root);
   });
 
+  test('viewing the details of a rental property', async function (assert) {
+    await visit(root);
+    // TODO: would be nice to tie this to an actual 'fetch' from our public/api for data.length
+    assert.dom('.rental').exists({ count: 3 });
+
+    await click('.rental:first-of-type a');
+    assert.strictEqual(currentURL(), '/rentals/grand-old-mansion');
+  });
+
+  test('visiting /rentals/grand-old-mansion', async function (assert) {
+    await visit('/rentals/grand-old-mansion');
+
+    assert.strictEqual(currentURL(), '/rentals/grand-old-mansion');
+    assert.dom('nav').exists();
+    assert.dom('h1').containsText('SuperRentals');
+    assert.dom('h2').containsText('Grand Old Mansion');
+    assert.dom('.rental.detailed').exists();
+  });
+
   test(`visiting ${about}`, async function (assert) {
     await visit(about);
 
