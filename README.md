@@ -1,19 +1,32 @@
+# ember-advanced-tutorial
+
+A fairly lengthy, but good, tutorial that weaves you through the basic to intermediate concepts of ember. All along the way, I have found that as we write code we also write a test for it. I have liked the strategic approach that it takes.
+
+**Link to Start of Part 1**:  
+<a href="https://guides.emberjs.com/release/tutorial/part-1/orientation/" target="_blank" rel="noopener noreferrer">https://guides.emberjs.com/release/tutorial/part-1/orientation/</a>
+
+**Recap of Part 1** (_cliff note bullet overview_):  
+<a href="https://guides.emberjs.com/release/tutorial/part-1/recap/" target="_blank" rel="noopener noreferrer">https://guides.emberjs.com/release/tutorial/part-1/recap/</a>
+
+**Link to Start of Part 2**:  
+<a href="https://guides.emberjs.com/release/tutorial/part-2/" target="_blank" rel="noopener noreferrer">https://guides.emberjs.com/release/tutorial/part-2/</a>
+
+**Recap of Part 2**:  
+<a href="https://guides.emberjs.com/release/tutorial/part-2/recap/" target="_blank" rel="noopener noreferrer">https://guides.emberjs.com/release/tutorial/part-2/recap/</a>
+
 # How I generated this repo boilerplate
 
-Since my process for creating an base level ember app is being parsed from a few different sources, I thought it would be nice to have them in one place incase I need to do this again.
+I wanted to do this tutorial in Typescript so that I could keep those skills fresh and up the challenge a little. Since my process for creating a base ember app in Typescript was being parsed from a few different sources, I thought it would be nice that documented.
 
-I liked that the `init` command let you do your own git repo/process. Almost all the docs recommend `ember new`, which adds a `.git` setup for you.
-
-### Please note
-
-Please note that my README here, at least at this time, is intended for helping me remember the ember-cli better. What I understand and assert is subject to change as I learn more. If anyone is following along, I felt responsible to share that friendly fair warning.
+I liked that the `init` command let you do your own git repo/process. Many of the tutorials and doc examples recommend `ember new`, which adds a `.git` setup for you.
 
 **Update/Amendment**:  
 It looks like you can also run `ember new` with `--skip-git ` or `-sg` for short.
 
-1. In GitHub, created a new empty repo called "ember-advanced-tutorial" .
-2. Locally, when in dir of choice, ran my global ember command: `ember init`
-3. Added all generated files to GitHub and pushed it up
+1. In GitHub, I created a new empty repo called: "ember-advanced-tutorial"  
+(**note:** _if you already haven't, ember must be globally installed with npm first_)  
+2. Locally, I cloned that repo, `cd`'d into it, and then ran: `ember init`  
+3. Added all generated files to git, then pushed up
 4. created a new branch for typescript/vscode configs
 5. ran ` ember install ember-cli-typescript@latest`
 6. ran `ember g component -gc welcome` (**note:** _I could not get this to command to generate any ts files..._)
@@ -22,9 +35,20 @@ It looks like you can also run `ember new` with `--skip-git ` or `-sg` for short
 
 ### More on the welcome component generation
 
-I plan to use the `-ts` flag version of `ember generate component` for better better insight (`ember g component -ts -gc welcome`). It tells you whether or not templates are available for what you are trying to create. As of end of part 1 of the super rental tutorial, I have not had 1 set of the cli commands generate a typescript file. My current guess is either I've set something up incorrectly or what is acturally generated in typescript with `ember generate component` limited. I'm not entirely sure at this time.
+So far I have been using the `-ts` flag version of `ember generate component` for better better insight.
 
-Example output with ts flag:
+full command example:  
+`ember g component -ts -gc welcome`
+
+Adding the `-ts` flag signals that you want to create a typescript version of this component. If a typescript version is available, it will be created. If a typescript version is not available, then a warning will be shown in your console. 
+
+Inside `.ember-cli`, I currently have `isTypeScriptProject` set to `true`. And as mentioned earlier, for good measure, I also pass the `-ts` flag when running generate. I am currently all the way up through the end of Part 1 of the Super Rental Tutorial, and with both of the above configurations passed, I still have not had 1 set of the cli commands generate a typescript file.
+
+My current guess is either I've set something up incorrectly or what is actually generated in typescript with `ember generate component` is limited. I'm not entirely sure at this time, but I have since saved a few web articles to read more about `ember-cli-typescript` after I finish this tutorial series.
+
+## for the curious (terminal output of `ember g component`)
+
+Example output without `-ts` flag
 
 ```
 bgwest:ember-advanced-tutorial bgwest$ ember g component -gc welcome
@@ -35,7 +59,7 @@ installing component-test
   identical tests/integration/components/welcome-test.js
 ```
 
-Example output without ts flag
+Example output with `-ts` flag:
 
 ```
 bgwest-mac:ember-advanced-tutorial bgwest$ ember g component -gc -ts welcome
@@ -49,8 +73,6 @@ You passed the '--typescript' flag but there is no TypeScript blueprint availabl
   identical tests/integration/components/welcome-test.js
 bgwest-mac:ember-advanced-tutorial bgwest$
 ```
-
-# ember-advanced-tutorial
 
 # Generated By Ember Init
 
