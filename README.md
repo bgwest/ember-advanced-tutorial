@@ -16,7 +16,7 @@ A fairly lengthy, but good, tutorial that weaves you through the basic to interm
 
 # How I generated this repo boilerplate
 
-I wanted to do this tutorial in Typescript so that I could keep those skills fresh and up the challenge a little. Since my process for creating a base ember app in Typescript was being parsed from a few different sources, I thought it would be nice that documented.
+I wanted to do this tutorial in Typescript so that I could keep those skills fresh and up the challenge a little. Since my process for creating a base ember app in Typescript was being parsed from a few different sources, I thought it would be nice for it to be documented.
 
 I liked that the `init` command let you do your own git repo/process. Many of the tutorials and doc examples recommend `ember new`, which adds a `.git` setup for you.
 
@@ -24,7 +24,7 @@ I liked that the `init` command let you do your own git repo/process. Many of th
 It looks like you can also run `ember new` with `--skip-git ` or `-sg` for short.
 
 1. In GitHub, I created a new empty repo called: "ember-advanced-tutorial"  
-(**note:** _if you already haven't, ember must be globally installed with npm first_)  
+(**note:** _ember must be globally installed with npm first_)  
 2. Locally, I cloned that repo, `cd`'d into it, and then ran: `ember init`  
 3. Added all generated files to git, then pushed up
 4. created a new branch for typescript/vscode configs
@@ -35,7 +35,7 @@ It looks like you can also run `ember new` with `--skip-git ` or `-sg` for short
 
 ### More on the welcome component generation
 
-So far I have been using the `-ts` flag version of `ember generate component` for better better insight.
+So far I have been using the `-ts` flag version of `ember generate component` for better insight.
 
 full command example:  
 `ember g component -ts -gc welcome`
